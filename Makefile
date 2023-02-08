@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/08 12:26:30 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/08 12:32:56 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ FLAGS = -Wall -Wextra -Werror
 # =========================== SOURCES ======================================== #
 
 SRC = main.c utils.c errors.c fractols.c colors.c mouse.c 
+LIBFT = ./libft/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
 L_MLX = ./miniLibX/libmlx.a
@@ -50,6 +51,7 @@ italic = \033[3m
 all: dir $(NAME)
 -include $(DEP)
 dir:
+	@make bonus -C $(LIBFT)
 	@mkdir -p $(D_OBJ)
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r $@$(E)"
@@ -63,8 +65,10 @@ $(NAME): $(OBJ)
 .PHONY: clean fclean re
 fclean: clean
 	@$(RM) $(NAME)
+	@make fclean -C $(LIBFT)
 	@echo -e "$(B)$(ligth)-->$(E)$(ligth) ==== fractol object files cleaned! ==== ✅$(E)"
 clean:
 	@$(RM) $(D_OBJ)
+	@make clean -C $(LIBFT)
 	@echo -e "$(B)$(ligth)-->$(E)$(ligth) ==== fractol executable files and name cleaned! ==== ✅$(E)"
 re: fclean all
