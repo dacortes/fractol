@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 16:48:21 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/09 17:11:35 by dacortes         ###   ########.fr       */
+/*   Created: 2023/01/24 10:48:27 by dacortes          #+#    #+#             */
+/*   Updated: 2023/01/30 11:11:57 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
 
-static int	gc_az_azp(int i, t_color *c)
+int	gc_az_azp(int i, t_color *c)
 {
 	if (i < 65)
 	{
@@ -31,7 +31,7 @@ static int	gc_az_azp(int i, t_color *c)
 	return (create_trgb(c->t, c->r, c->g, c->b));
 }
 
-static int	gc_bla_fux(int i, t_color *c)
+int	gc_bla_fux(int i, t_color *c)
 {
 	if (i < 35)
 	{
@@ -62,10 +62,11 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-int	generete_c(t_win *win)
+int	genete_c(int i)
 {
-	gc_az_azp(win->f.i, &win->colors);
-	gc_bla_fux(win->f.i, &win->colors);
-	return (create_trgb(win->colors.t, win->colors.r, win->colors.g,
-			win->colors.b));
+	t_color	c;
+
+	gc_az_azp(i, &c);
+	gc_bla_fux(i, &c);
+	return (create_trgb(c.t, c.r, c.g, c.b));
 }

@@ -5,12 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 17:06:34 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 10:50:51 by dacortes         ###   ########.fr       */
+/*   Created: 2023/01/17 17:47:00 by dacortes          #+#    #+#             */
+/*   Updated: 2023/02/09 18:57:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
+
+int	mouse(int x, int y, t_win *win)
+{
+	win->mx = x;
+	win->my = y;
+	//mlx_mouse_hook(win->win, zoom, win);
+	julia_mouse(win, -1, -1);
+	mlx_put_image_to_window(win->mlx, win->win, win->img, 0, 0);
+	return (0);
+}
 
 int	prueba_m(char *argv)
 {
@@ -23,7 +33,7 @@ int	prueba_m(char *argv)
 	win.img = mlx_new_image(win.mlx, WIDTH, HEIGHT);
 	win.addr = mlx_get_data_addr(win.img, &win.bits_per_pixel,
 			&win.line_length, &win.endian);
-	mandelbrot(&win, -1, -1);
+	mandelbrot_sets(&win, -1, -1);
 	mlx_clear_window(win.mlx, win.win);
 	mlx_put_image_to_window(win.mlx, win.win, win.img, 0, 0);
 	mlx_hook(win.win, 2, 1L << 0, close_esc, &win);
@@ -44,7 +54,7 @@ int	prueba_mouse_julia(char *argv)
 	win.addr = mlx_get_data_addr(win.img, &win.bits_per_pixel,
 			&win.line_length, &win.endian);
 	mlx_hook(win.win, 4, 0, zoom, &win);//scroll up
-	mlx_hook(win.win, 6, 1L << 6, move, &win);
+	mlx_hook(win.win, 6, 1L << 6, mouse, &win);
 	//mlx_mouse_hook(win.win, zoom, &win);
 	//mlx_hook(win.win, 4, 1L << 12, zoom, &win);//scroll down
 	mlx_hook(win.win, 2, 1L << 0, close_esc, &win);
@@ -57,6 +67,7 @@ int	main(int argc, char **argv)
 {
 	int	f;
 
+	ft_printf("%p", argv);
 	f = check_arc(argc, argv[1]);
 	if (f == 1)
 	{

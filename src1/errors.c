@@ -5,31 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 16:59:08 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 10:25:15 by dacortes         ###   ########.fr       */
+/*   Created: 2023/01/19 14:47:46 by dacortes          #+#    #+#             */
+/*   Updated: 2023/02/01 17:53:52 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
 
-char	*conv_low(char *tmp, char *agv)
-{
-	int	i;
-
-	tmp = ft_calloc(ft_strlen(agv) + 1, sizeof(char));
-	if (!tmp)
-		return (NULL);
-	i = 0;
-	ft_strlcpy(tmp, agv, ft_strlen(agv) + 1);
-	while (tmp[i])
-	{
-		tmp[i] = ft_tolower(tmp[i]);
-		i++;
-	}
-	return (tmp);
-}
-
-static void	error_agv(void)
+void	error_agv(void)
 {
 	ft_printf(B"Error-->Usage: ./fractol [fractal]\n"E);
 	ft_printf(B"Fractals :\n1.Mandelbrot\n2.Julia\n"E);
@@ -76,7 +59,10 @@ int	check_arc(int argc, char *argv)
 		if (f == 0)
 			return (0);
 	}
-	if (tmp)
+	if(tmp)
+	{
 		free(tmp);
+		tmp = NULL;
+	}
 	return (f);
 }

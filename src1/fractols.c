@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 10:54:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/03 12:59:47 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:40:56 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	formula(t_var *f, int opt)
 {
 	if (opt == 0)
 	{
-		f->tmp_x = f->zx * f->zx - f->zy * f->zy + f->cx *0.9;
-		f->zy = 2 * f->zx * f->zy + f->cy *0.9;
+		f->tmp_x = f->zx * f->zx - f->zy * f->zy + f->cx;
+		f->zy = 2 * f->zx * f->zy + f->cy;
 		f->zx = f->tmp_x;
 	}
 	else if (opt == 1)
@@ -42,6 +42,7 @@ void	julia_mouse(t_win *img, int x, int y)
 {
 	t_var	f;
 
+	f.zoom = img->m_zoom;
 	while (++y < HEIGHT)
 	{
 		x = -1;

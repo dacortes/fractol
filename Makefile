@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/08 12:32:56 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/10 10:46:16 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ FLAGS = -Wall -Wextra -Werror
 
 # =========================== SOURCES ======================================== #
 
-SRC = main.c utils.c errors.c fractols.c colors.c mouse.c 
+SRC = colors.c errors.c fractals.c main.c window.c mouse.c
 LIBFT = ./libft/
+MINIL = ./miniLibX/
 L_SRC = ./src
 L_LIB = ./libft/libft.a
 L_MLX = ./miniLibX/libmlx.a
@@ -52,6 +53,7 @@ all: dir $(NAME)
 -include $(DEP)
 dir:
 	@make bonus -C $(LIBFT)
+	@make -C $(MINIL)
 	@mkdir -p $(D_OBJ)
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r $@$(E)"
@@ -70,5 +72,6 @@ fclean: clean
 clean:
 	@$(RM) $(D_OBJ)
 	@make clean -C $(LIBFT)
+	@make clean -C $(MINIL)
 	@echo -e "$(B)$(ligth)-->$(E)$(ligth) ==== fractol executable files and name cleaned! ==== ✅$(E)"
 re: fclean all
