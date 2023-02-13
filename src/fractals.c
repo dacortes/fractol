@@ -6,11 +6,17 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 10:47:40 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 11:40:20 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/13 14:53:49 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
+
+void zoom_factor(t_win *win, int *h, int *w)
+{
+	*w = *w * win->mouse.m_zoom;
+	*h = *h * win->mouse.m_zoom;
+}
 
 static	void	ft_put_pixel(t_win *win, int col, int row)
 {
@@ -30,26 +36,34 @@ static void	formula(t_var *f, int opt)
 	}
 	else if (opt == 1)
 	{
-		f->tmp_x = powf(f->zx * f->zx + f->zy * f->zy, f->n / 2.0)
-			* cosf(f->n * atan2f(f->zy, f->zx)) + f->cx;
-		f->zy = powf(f->zx * f->zx + f->zy * f->zy, f->n / 2.0)
-			* sinf(f->n * atan2f(f->zy, f->zx)) + f->cy;
+		f->tmp_x = pow(f->zx * f->zx + f->zy * f->zy, f->n / 2.0)
+			* cos(f->n * atan2(f->zy, f->zx)) + f->cx;
+		f->zy = pow(f->zx * f->zx + f->zy * f->zy, f->n / 2.0)
+			* sin(f->n * atan2(f->zy, f->zx)) + f->cy;
 		f->zx = f->tmp_x;
 	}
 }
 
 void	julia_mouse(t_win *win, int x, int y)
 {
+	int	h = HEIGHT;
+	int	w = WIDTH;
+	zoom_factor(win, &h, &w);
 	while (++y < HEIGHT)
 	{
 		x = -1;
 		while (++x < WIDTH)
 		{
+			/*win->f.zx = (x - WIDTH / 2.0) * 4.0 / WIDTH;
+			win->f.zy = (y - HEIGHT / 2.0) * 4.0 / WIDTH;
+			win->f.cx = (win->mouse.m_x - WIDTH / 2.0) * 4.0 / WIDTH;
+			win->f.cy = (win->mouse.m_y - HEIGHT / 2.0) * 4.0 / WIDTH;*/
+
 			win->f.zx = (x - WIDTH / 2.0) * 4.0 / WIDTH;
 			win->f.zy = (y - HEIGHT / 2.0) * 4.0 / WIDTH;
 			win->f.cx = (win->mouse.m_x - WIDTH / 2.0) * 4.0 / WIDTH;
 			win->f.cy = (win->mouse.m_y - HEIGHT / 2.0) * 4.0 / WIDTH;
-			win->f.r = 4;
+			win->f.r = 4; 
 			win->f.n = 2;
 			win->f.i = -1;
 			while (win->f.zx * win->f.zx + win->f.zy * win->f.zy <= win->f.r

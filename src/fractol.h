@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 10:48:33 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:29:08 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ typedef struct s_mouse
 {
 	float	m_x;
 	float	m_y;
-	float	m_zoom;
+	double	m_zoom;
 }	t_mouse;
 
 //Fractals variables
 typedef struct s_var
 {
-	float	zx;
-	float	zy;
-	float	cx;
-	float	cy;
+	double	zx;
+	double	zy;
+	double	cx;
+	double	cy;
 	float	n;
 	float	r;
 	float	tmp_x;

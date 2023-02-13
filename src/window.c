@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:08:12 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 10:24:39 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/13 14:54:59 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	close_esc(int keycode, t_win *win)
 		mlx_destroy_image(win->mlx, win->img);
 		mlx_destroy_window(win->mlx, win->win);
 		ft_printf(B"--> Bye bye 👋\n"E);
+		exit(0);
 	}
-	exit(0);
+	return (0);
 }
 
 void	my_mlx_pixel_put(t_win *data, int x, int y, int color)

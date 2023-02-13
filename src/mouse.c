@@ -6,17 +6,12 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:38:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/10 11:55:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:55:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
 #include<stdio.h>
-
-void setting_zoom(t_win *win)
-{
-
-}
 
 int	move(int x, int y, t_win *win)
 {
@@ -32,11 +27,11 @@ int	zoom(int button, int x, int y, t_win *win)
 	(void)(x);
 	(void)(y);
 	
-	win->mouse.m_zoom = ZOOM;
+	win->mouse.m_zoom = 1.0;
 	if (button == 4)
-		win->mouse.m_zoom += 1.1;
+		win->mouse.m_zoom += 0.5;
 	else if (button == 5)
-		win->mouse.m_zoom -= 1.1;
+		win->mouse.m_zoom -= 0.5;
 	printf("Zoom: %f", win->mouse.m_zoom);
 	return (0);
 }
