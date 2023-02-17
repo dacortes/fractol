@@ -6,13 +6,14 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 08:41:50 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 09:24:39 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:59:32 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KEYSCODE_H
 # define KEYSCODE_H
 
+# define BTN_X 17
 # define KEY_ESC 53
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
@@ -20,4 +21,7 @@
 # define KEY_UP 126
 # define KEY_PLUS 61
 # define KEY_MINUS 45
+# define SCROLL_UP 4
+# define SCROLL_DOW 5
+# define MIDDLE_CLICK 3
 #endif

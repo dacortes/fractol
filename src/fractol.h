@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 09:56:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:51:03 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ typedef struct s_fractol
 // ================================= FUNCTIONS ============================== //
 
 /* colors.c */
-void	ft_put_pixel(t_win *win, int x, int y, int iter);
+void	ft_put_pixel(t_fractol *f, int x, int y, int iter);
 /* events.c */
 int 	key_event(int keycode, t_fractol *f);
 int		mouse_event(int keycode, int x, int y, t_fractol *f);
@@ -97,5 +97,9 @@ int		end_fractol(t_fractol *f);
 void	init_var(t_fractol *f);
 void	get_num_complex(t_fractol *f);
 void	reinit_img(t_fractol *f);
-void	init(t_fractol *f, char *argv);
+void	init(t_fractol *f, int check);
+/* render.c */
+void	render (t_fractol *f, int x, int y);
+/* check_arg.c */
+int		check_arc(int argc, char *argv);
 #endif

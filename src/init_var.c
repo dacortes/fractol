@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/16 18:17:21 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:51:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,23 @@ void	reinit_img(t_fractol *f)
 	init_img (f);
 }
 
-void	init(t_fractol *f, char *argv)
+static char	*name_win(int check)
+{
+	char *name;
+
+	if (check == 1)
+		name = "Mandelbrot";
+	else if (check == 2)
+		name = "Julia";
+	return (name);
+}
+
+void	init(t_fractol *f, int check)
 {
 	f->win.mlx = mlx_init();
 	if (!f->win.mlx)
 		clean_win(msg_err("MLX: error connecting to mlx.", 1), f);
-	f->win.win = mlx_new_window(f->win.mlx, WIDTH, HEIGHT, argv);
+	f->win.win = mlx_new_window(f->win.mlx, WIDTH, HEIGHT, name_win(check));
 	if (!f->win.win)
 		clean_win(msg_err("MLX: error connecting to mlx.", 1), f);
 	f->var.sx = 2.0;
