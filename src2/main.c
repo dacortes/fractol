@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:06:34 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/13 13:36:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/16 12:16:18 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	prueba_mouse_julia(char *argv)
 {
 	t_win	win;
 
+	win.f.width = WIDTH;
+	win.f.height = HEIGHT;
 	win.mlx = mlx_init();
 	win.win = mlx_new_window(win.mlx, WIDTH, HEIGHT, argv);
 	if (win.win == NULL)
@@ -43,7 +45,7 @@ int	prueba_mouse_julia(char *argv)
 	win.img = mlx_new_image(win.mlx, WIDTH, HEIGHT);
 	win.addr = mlx_get_data_addr(win.img, &win.bits_per_pixel,
 			&win.line_length, &win.endian);
-	mlx_hook(win.win, 4, 0, zoom, &win);
+	mlx_hook(win.win, 4, 0, scroll, &win);
 	mlx_hook(win.win, 6, 1L << 6, move, &win);
 	mlx_hook(win.win, 2, 1L << 0, close_esc, &win);
 	mlx_hook(win.win, 17, 1L << 17, close_win, &win);

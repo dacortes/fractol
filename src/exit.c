@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.c                                           :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:21:47 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 09:39:17 by dacortes         ###   ########.fr       */
+/*   Created: 2023/02/16 15:55:13 by dacortes          #+#    #+#             */
+/*   Updated: 2023/02/16 18:24:44 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
 
-static int generete_c(t_fractol *f, int iter)
+void	clean_win(int code, t_fractol *f)
 {
-	double	t;
-	int		r;
-	int		g;
-	int		b;
-
-	t = (double)iter / 100.0;
-	r = (int)(9 * (1 - t) * t * t * t * 255);
-	g = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
-	b = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-	return (r << 16 | g << 8 | b);
+	if (!f)
+		exit(code);
+	if (f->win.img)
+		mlx_destroy_image(f->win.mlx, f->win.img);
+	if (f->win.mlx)
+		mlx_destroy_window(f->win.mlx, f->win.win);
+	exit(code);
 }
-void	ft_put_pixel(t_win *win, int x, int y, int iter)
+
+int	msg_err(char *str, int error)
 {
-	my_mlx_pixel_put(win, x, y, generete_c(win, iter));
+	ft_printf(R"Fractol :\n"E);
+	ft_printf("%s", str);
+	return (error);
+}
+
+int	end_fractol(t_fractol *f)
+{
+	clean_win(0, f);
+	ft_printf(B"--> Bye bye 👋\n"E);
+	return (0);
 }

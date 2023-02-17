@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 17:34:26 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/08 14:31:38 by dacortes         ###   ########.fr       */
+/*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
+/*   Updated: 2023/02/16 12:06:29 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 // ================================= LIBRARIES ============================== //
 
-#include"../miniLibX/mlx.h"
+# include"../miniLibX/mlx.h"
 # include"../libft/libft.h"
 # include"../libft/ft_printf.h"
 # include<math.h>
@@ -33,33 +33,8 @@
 # define Y "\033[1;33m"    //yellow
 # define B "\033[1;34m"    //blue
 // ================================= STRUCTURES ============================= //
-//Windows && Image
-typedef struct s_win {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*addr;
-	float	mx;
-	float	my;
-	float	m_zoom;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_win;
-//Fractals variables
-typedef struct s_var
-{
-	float	zx;
-	float	zy;
-	float	cx;
-	float	cy;
-	float	n;
-	float	r;
-	float	tmp_x;
-	float	zoom;
-	int		i;
-}	t_var;
-//Colors
+
+//colors trgb
 typedef struct s_color
 {
 	int		r;
@@ -67,27 +42,64 @@ typedef struct s_color
 	int		b;
 	int		t;
 }	t_color;
+
+//Mouse
+typedef struct s_mouse
+{
+	char	m_down;
+	float	m_x;
+	float	m_y;
+	double	m_zoom;
+}	t_mouse;
+
+//Fractals variables
+typedef struct s_var
+{
+	double	width;
+	double	height;
+	double	zx;
+	double	zy;
+	double	cx;
+	double	cy;
+	float	n;
+	float	r;
+	float	tmp_x;
+	int		i;
+}	t_var;
+
+//Windows && Image
+typedef struct s_win
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	t_var	f;
+	t_mouse	mouse;
+	t_color	colors;
+}	t_win;
+
 // ================================= FUNCTIONS ============================== //
-//Check_error
-void	error_agv(void);
-int		check_arg(char *tmp);
-int		check_arc(int argc, char *argv);
-//utils
-char	*conv_low(char *tmp, char *agv);
-//Close window
+
+//fractals
+void	mandelbrot(t_win *win, int x, int y);
+void	julia_mouse(t_win *win, int x, int y);
+//window && imagen
 int		close_win(t_win *win);
 int		close_esc(int keycode, t_win *win);
-//put pixel
-void	ft_px_put(t_win *img, int i, int col, int row);
 void	my_mlx_pixel_put(t_win *data, int x, int y, int color);
-//Fractals
-void	formula(t_var *f, int opt);
-void	mandelbrot_sets(t_win *img, int x, int y);
-//pruebas
-int		mouse(int x, int y, t_win *win);
-int 	zoom(int button, int x, int y, t_win *img);
-void	julia_mouse(t_win *img, int x, int y);
+//mouse
+int		move(int x, int y, t_win *win);
+//int		zoom(int button, int x, int y, t_win *win);
+void	zoom(t_win *win, int x, int y, double zoom);
+int		scroll(int button, int x, int y, t_win *win);
 //colors
-int		genete_c(int i);
-int		create_trgb(int t, int r, int g, int b);
+void	ft_put_pixel(t_win *win, int col, int row);
+//errors
+char	*conv_low(char *tmp, char *agv);
+int		check_arg(char *tmp);
+int		check_arc(int argc, char *argv);
 #endif

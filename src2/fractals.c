@@ -6,32 +6,18 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 10:47:40 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/13 14:53:49 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/16 12:16:52 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
-
-void zoom_factor(t_win *win, int *h, int *w)
-{
-	*w = *w * win->mouse.m_zoom;
-	*h = *h * win->mouse.m_zoom;
-}
-
-static	void	ft_put_pixel(t_win *win, int col, int row)
-{
-	if (win->f.i < 100)
-		my_mlx_pixel_put(win, col, row, generete_c(win));
-	else
-		my_mlx_pixel_put(win, col, row, 0x000000);
-}
 
 static void	formula(t_var *f, int opt)
 {
 	if (opt == 0)
 	{
 		f->tmp_x = f->zx * f->zx - f->zy * f->zy + f->cx;
-		f->zy = 2 * f->zx * f->zy + f->cy;
+		f->zy = 2 * f->zx * f->zy + f->cy ;
 		f->zx = f->tmp_x;
 	}
 	else if (opt == 1)
@@ -46,23 +32,15 @@ static void	formula(t_var *f, int opt)
 
 void	julia_mouse(t_win *win, int x, int y)
 {
-	int	h = HEIGHT;
-	int	w = WIDTH;
-	zoom_factor(win, &h, &w);
 	while (++y < HEIGHT)
 	{
 		x = -1;
 		while (++x < WIDTH)
 		{
-			/*win->f.zx = (x - WIDTH / 2.0) * 4.0 / WIDTH;
-			win->f.zy = (y - HEIGHT / 2.0) * 4.0 / WIDTH;
-			win->f.cx = (win->mouse.m_x - WIDTH / 2.0) * 4.0 / WIDTH;
-			win->f.cy = (win->mouse.m_y - HEIGHT / 2.0) * 4.0 / WIDTH;*/
-
-			win->f.zx = (x - WIDTH / 2.0) * 4.0 / WIDTH;
-			win->f.zy = (y - HEIGHT / 2.0) * 4.0 / WIDTH;
-			win->f.cx = (win->mouse.m_x - WIDTH / 2.0) * 4.0 / WIDTH;
-			win->f.cy = (win->mouse.m_y - HEIGHT / 2.0) * 4.0 / WIDTH;
+			win->f.zx = (x - win->f.width / 2.0) * 4.0 / win->f.width;
+			win->f.zy = (y - win->f.height / 2.0) * 4.0 / win->f.width;
+			win->f.cx = (win->mouse.m_x - win->f.width / 2.0) * 4.0 / win->f.width;
+			win->f.cy = (win->mouse.m_y - win->f.height / 2.0) * 4.0 / win->f.width;
 			win->f.r = 4; 
 			win->f.n = 2;
 			win->f.i = -1;
