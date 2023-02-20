@@ -6,11 +6,12 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 12:14:18 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:16:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fractol.h"
+#include <stdio.h>
 
 void	init_var(t_fractol *f)
 {
@@ -43,9 +44,9 @@ void	get_num_complex(t_fractol *f)
 	}
 	else if (f->var.set == MANDELBROT)
 	{
-		f->var.min_re = -1.0;
-		f->var.max_re = 4.0;
-		f->var.max_im = -1.0;
+		f->var.min_re = -2.0;
+		f->var.max_re = 1.0;
+		f->var.max_im = -1.5;
 		f->var.min_im = f->var.min_im + (f->var.max_re - f->var.min_re)
 			* HEIGHT / WIDTH;
 	}

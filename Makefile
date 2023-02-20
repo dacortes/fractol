@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/17 11:25:37 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/20 14:28:19 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,11 +57,11 @@ dir:
 	@make -C $(MINIL)
 	@mkdir -p $(D_OBJ)
 $(D_OBJ)/%.o:$(L_SRC)/%.c
-	@printf "$(ligth)$(Y)\r $@$(E)"
+	@printf "$(ligth)$(Y)\r$@...$(E)"
 	@$(CC) -MMD $(FLAGS) -c $< -o $@
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) $(L_LIB) $(L_MLX) $(L_FRAME) -o $(NAME)
-	@echo -e "\n$(B)$(ligth)-->$(G) ==== Project fractol compiled! ==== ✅$(E)"
+	@echo  "\n$(B)$(ligth)-->$(G) ==== Project fractol compiled! ==== ✅$(E)"
 
 # ========================== CLEAN   ===================================== #
 
@@ -69,10 +69,10 @@ $(NAME): $(OBJ)
 fclean: clean
 	@$(RM) $(NAME)
 	@make fclean -C $(LIBFT)
-	@echo -e "$(B)$(ligth)-->$(E)$(ligth) ==== fractol object files cleaned! ==== ✅$(E)"
+	@echo "$(B)$(ligth)-->$(E)$(ligth) ==== fractol object files cleaned! ==== ✅$(E)"
 clean:
 	@$(RM) $(D_OBJ)
 	@make clean -C $(LIBFT)
 	@make clean -C $(MINIL)
-	@echo -e "$(B)$(ligth)-->$(E)$(ligth) ==== fractol executable files and name cleaned! ==== ✅$(E)"
+	@echo "$(B)$(ligth)-->$(E)$(ligth) ==== fractol executable files and name cleaned! ==== ✅$(E)"
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 11:36:51 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:30:35 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ static void move(t_fractol *f, double distance, char direction)
 
     cen_re = f->var.min_re - f->var.max_re;
     cen_im = f->var.min_im - f->var.max_im;
-    if (direction == 'R')
+    if (direction == 'D')
     {
         f->var.min_re += cen_re * distance;
         f->var.max_re += cen_re * distance;
     }
-    else if (direction == 'L')
+    else if (direction == 'R')
     {
         f->var.min_re -= cen_re * distance;
         f->var.max_re -= cen_re * distance;
     }
-    else if (direction == 'D')
+    else if (direction == 'U')
     {
         f->var.min_im -= cen_im * distance;
         f->var.max_im -= cen_im * distance;
     }
-    else if (direction == 'U')
+    else if (direction == 'L')
     {
         f->var.min_im += cen_im * distance;
         f->var.max_im += cen_im * distance;
