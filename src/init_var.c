@@ -6,12 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 14:16:40 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:44:09 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"fractol.h"
-#include <stdio.h>
+#include"../includes/fractol.h"
 
 void	init_var(t_fractol *f)
 {
@@ -61,18 +60,9 @@ static void	init_img(t_fractol *f)
 			&f->win.line_length, &f->win.endian);
 }
 
-void	reinit_img(t_fractol *f)
-{
-	if (f->win.mlx && f->win.img)
-		mlx_destroy_image(f->win.mlx, f->win.img);
-	if (f->win.addr)
-		f->win.addr = NULL;
-	init_img (f);
-}
-
 static char	*name_win(int check)
 {
-	char *name;
+	char	*name;
 
 	name = NULL;
 	if (check == 1)

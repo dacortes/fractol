@@ -6,12 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:20:43 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 11:25:42 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:44:23 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"fractol.h"
-
+#include"../includes/fractol.h"
 
 static char	*conv_low(char *tmp, char *agv)
 {

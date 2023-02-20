@@ -6,13 +6,13 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:21:47 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 12:17:32 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:44:19 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"fractol.h"
+#include"../includes/fractol.h"
 
-static int generete_c(int iter)
+static int	generete_c(int iter)
 {
 	double	t;
 	int		r;
