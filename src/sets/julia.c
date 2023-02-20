@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:45:51 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:49 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../../includes/fractol.h"
+#include"../../inc/fractol.h"
 
 int	julia_click(int x, int y, t_fractol *f)
 {

@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:21:47 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:44:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:32 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/fractol.h"
+#include"../inc/fractol.h"
 
 static int	generete_c(int iter)
 {

@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:44:14 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/fractol.h"
+#include"../inc/fractol.h"
 
 static void	zoom(t_fractol *f, double zoom)
 {

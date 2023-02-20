@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:43:51 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:07 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/fractol.h"
+#include"../inc/fractol.h"
 
 static void	get_set(t_fractol *f, int check)
 {

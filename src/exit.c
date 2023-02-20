@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:55:13 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 11:38:37 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:23 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"fractol.h"
+#include"../inc/fractol.h"
 
 void	clean_win(int code, t_fractol *f)
 {

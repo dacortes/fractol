@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:05:01 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:45:57 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:51:42 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../../includes/fractol.h"
+#include"../../inc/fractol.h"
 
 int	mandelbrot(double cr, double ci)
 {

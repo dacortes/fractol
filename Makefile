@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/20 15:33:39 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/20 15:50:21 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ L_SRC = ./src
 L_LIB = ./libft/libft.a
 L_MLX = ./miniLibX/libmlx.a
 L_FRAME = -framework OpenGL -framework AppKit
-INC			=	-I ./includes/\
+INC			=	-I ./inc/\
 				-I ./libft/\
 				-I ./minilibX/
 
