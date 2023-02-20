@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:51:49 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:59:58 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,20 @@ int	julia_click(int x, int y, t_fractol *f)
 	f->mouse.posim = f->var.max_im + (double)y * (f->var.min_im - f->var.max_im)
 		/ WIDTH;
 	render(f, -1, -1);
-	return (0);
+	return (SUCCES);
 }
 
-int	julia(t_fractol *f, double zr, double zi)
+int	julia(t_fractol *f, double zx, double zy)
 {
 	double	tmp;
 	int		i;
 
 	i = 0;
-	while (i < MAX_ITER)
+	while (zx * zx + zy * zy <= 4.0 && ++i < MAX_ITER)
 	{
-		if ((zi * zi + zr * zr) > 4.0)
-			break ;
-		tmp = 2 * zr * zi + f->mouse.posim;
-		zr = zr * zr - zi * zi + f->mouse.posre;
-		zi = tmp;
+		tmp = 2 * zx * zy + f->mouse.posim;
+		zx = zx * zx - zy * zy + f->mouse.posre;
+		zy = tmp;
 		i++;
 	}
 	return (i);
