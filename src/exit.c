@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:55:13 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/16 18:24:44 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:38:37 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	msg_err(char *str, int error)
 
 int	end_fractol(t_fractol *f)
 {
-	clean_win(0, f);
 	ft_printf(B"--> Bye bye 👋\n"E);
-	return (0);
+	clean_win(0, f);
+	return (SUCCES);
 }

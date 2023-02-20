@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 11:01:44 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:36:41 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int main(int ac, char **av)
     t_fractol f;
     int check;
     
-    check = check_arc(ac, av);
+    check = check_arc(ac, av[1]);
+    if (check == ERROR)
+        exit(E_EXIT);
     init_var(&f);
     get_set(&f, check);
     init(&f, check);
@@ -41,4 +43,5 @@ int main(int ac, char **av)
     mlx_key_hook(f.win.win, key_event, &f);
     mlx_mouse_hook(f.win.win, mouse_event, &f);
     mlx_loop(f.win.mlx);
+    return (SUCCES);
 }

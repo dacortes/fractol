@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 10:51:03 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:36:11 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@
 # define WIDTH 1000
 # define HEIGHT 1000
 # define MAX_ITER 60
-# define ZOOM (float)1.1
+
+/* Outputs */
+# define SUCCES 0
+# define FALSE 0
+# define TRUE 1
+# define ERROR 0
+# define E_EXIT 1
 
 /* Fractal sets */
 # define MANDELBROT 1
@@ -44,8 +50,8 @@
 /* Mouse */
 typedef struct s_mouse
 {
-	float	posx;
-	float	posy;
+	float	posre;
+	float	posim;
 	double	zoom;
 }	t_mouse;
 
@@ -83,7 +89,11 @@ typedef struct s_fractol
 }	t_fractol;
 
 // ================================= FUNCTIONS ============================== //
-
+/* mandelbrot.c */
+int		mandelbrot(double cr, double ci);
+/* julia.c */
+int		julia_click(int x, int y, t_fractol *f);
+int		julia(t_fractol *f, double zr, double zi);
 /* colors.c */
 void	ft_put_pixel(t_fractol *f, int x, int y, int iter);
 /* events.c */

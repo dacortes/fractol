@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 09:58:33 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:36:51 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void move(t_fractol *f, double distance, char direction)
     }
     else if (direction == 'U')
     {
-        f->var.max_im += cen_im * distance;
+        f->var.min_im += cen_im * distance;
         f->var.max_im += cen_im * distance;
     }
 }
@@ -67,16 +67,16 @@ int key_event(int keycode, t_fractol *f)
         zoom(f, 2);
     else if (keycode == KEY_UP)
         move(f, 0.2, 'U');
-    else if (keycode == KEY_DOWN)
-        move(f, 0.2, 'D');
     else if (keycode == KEY_LEFT)
+        move(f, 0.2, 'D');
+    else if (keycode == KEY_DOWN)
         move(f, 0.2, 'L');
     else if (keycode == KEY_RIGHT)
         move (f, 0.2, 'R');
     else
-        return (1);
+        return (TRUE);
     render(f, -1, -1);
-    return (0);
+    return (FALSE);
 }
 
 int mouse_event(int keycode, int x, int y, t_fractol *f)
@@ -103,7 +103,7 @@ int mouse_event(int keycode, int x, int y, t_fractol *f)
             julia_click(x, y, f);
     }
     else
-        return (0);
+        return (FALSE);
     render(f, -1, -1);
-    return (0);
+    return (FALSE);
 }

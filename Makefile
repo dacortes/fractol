@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/10 10:46:16 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/17 11:25:37 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ FLAGS = -Wall -Wextra -Werror
 
 # =========================== SOURCES ======================================== #
 
-SRC = colors.c errors.c fractals.c main.c window.c mouse.c
+SRC = check_arg.c colors.c events.c exit.c init_var.c main.c render.c\
+	mandelbrot.c julia.c
 LIBFT = ./libft/
 MINIL = ./miniLibX/
 L_SRC = ./src

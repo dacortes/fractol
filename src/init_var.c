@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 10:51:27 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:14:18 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	init_var(t_fractol *f)
 	f->var.min_im = 0;
 	f->var.max_im = 0;
 	f->var.set = -1;
-	f->mouse.posx = 0;
-	f->mouse.posy = 0;
+	f->mouse.posre = 0;
+	f->mouse.posim = 0;
 	f->mouse.zoom = 0;
 }
 
@@ -43,9 +43,9 @@ void	get_num_complex(t_fractol *f)
 	}
 	else if (f->var.set == MANDELBROT)
 	{
-		f->var.min_re = -2.0;
-		f->var.max_re = 1.0;
-		f->var.max_im = -1.5;
+		f->var.min_re = -1.0;
+		f->var.max_re = 4.0;
+		f->var.max_im = -1.0;
 		f->var.min_im = f->var.min_im + (f->var.max_re - f->var.min_re)
 			* HEIGHT / WIDTH;
 	}
@@ -73,6 +73,7 @@ static char	*name_win(int check)
 {
 	char *name;
 
+	name = NULL;
 	if (check == 1)
 		name = "Mandelbrot";
 	else if (check == 2)
@@ -88,6 +89,7 @@ void	init(t_fractol *f, int check)
 	f->win.win = mlx_new_window(f->win.mlx, WIDTH, HEIGHT, name_win(check));
 	if (!f->win.win)
 		clean_win(msg_err("MLX: error connecting to mlx.", 1), f);
+	init_img(f);
 	f->var.sx = 2.0;
 	f->var.rx = 0.5;
 	f->var.fx = 1.0;

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:20:43 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 10:32:29 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:25:42 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	check_arg(char *tmp)
 	{
 		ft_printf(R"Error-->Wrong fractal name\n"E);
 		error_agv();
-		return (0);
+		return (FALSE);
 	}
 	else
 	{
@@ -52,7 +52,7 @@ static int	check_arg(char *tmp)
 		else if (ft_strncmp(tmp, "julia", 5) == 0)
 			return (2);
 	}
-	return (0);
+	return (FALSE);
 }
 
 int	check_arc(int argc, char *argv)
@@ -63,19 +63,19 @@ int	check_arc(int argc, char *argv)
 	tmp = ft_calloc(1, 1);
 	f = 0;
 	if (!tmp)
-		return (0);
+		return (ERROR);
 	if (argc != 2)
 	{
 		ft_printf(R"Error-->Wrong number of arguments\n"E);
 		error_agv();
-		return (0);
+		return (ERROR);
 	}
 	else
 	{
 		tmp = conv_low(tmp, argv);
 		f = check_arg(tmp);
-		if (f == 0)
-			return (0);
+		if (f == FALSE)
+			return (ERROR);
 	}
 	if (tmp)
 		free(tmp);

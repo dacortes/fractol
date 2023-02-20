@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:05:16 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/17 10:27:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:00:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	calculete(t_fractol *f, double re, double im)
 	if (f->var.set == MANDELBROT)
 		iter = mandelbrot(re, im);
 	else if (f->var.set == JULIA)
-		iter = julia(re, im);
+		iter = julia(f, re, im);
 	return (iter);
 }
 
@@ -36,8 +36,10 @@ void    render (t_fractol *f, int x, int y)
 		x = -1;
 		while(++x < WIDTH)
 		{
-			re = f->var.min_re + (double)x * (f->var.max_re - f->var.min_re) / WIDTH;
-			im = f->var.max_im + (double)x * (f->var.min_im - f->var.max_im) / HEIGHT;
+			/*re = f->var.min_re + (double)x * (f->var.max_re - f->var.min_re) / WIDTH;
+			im = f->var.max_im + (double)x * (f->var.min_im - f->var.max_im) / HEIGHT;*/
+			re = f->var.min_re + (x - WIDTH / 2.0) * (f->var.max_re - f->var.min_re) / WIDTH;
+			im = f->var.max_im + (y - HEIGHT / 2.0) * (f->var.min_im - f->var.max_im) / WIDTH;
 			iter = calculete(f, re, im);
 			ft_put_pixel(f, x, y, iter);
 		}
