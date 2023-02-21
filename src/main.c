@@ -6,12 +6,19 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:51:07 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:06:45 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
 
+int	julia_move(int x, int y, t_fractol *f)
+{
+    f->mouse.x = x;
+    f->mouse.y = y;
+	julia_click(f->mouse.x, f->mouse.y, f);
+	return (0);
+}
 static void	get_set(t_fractol *f, int check)
 {
 	if (check == 1)
@@ -33,6 +40,7 @@ int	main(int ac, char **av)
 	int		*prueba;
 
 	prueba = NULL;
+	f.set_t = 0;
 	check = check_arc(ac, av[1]);
 	if (check == ERROR)
 		exit(E_EXIT);

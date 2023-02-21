@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:15:02 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:06:16 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ typedef struct s_mouse
 	float	posre;
 	float	posim;
 	double	zoom;
+	int		status;
+	int		x;
+	int		y;
 }	t_mouse;
 
 /* window and image */
@@ -78,11 +81,14 @@ typedef struct s_var
 	double	rx;
 	double	fx;
 	int		set;
+	int		x;
+	int		y;
 }	t_var;
 
 /* Fractol */
 typedef struct s_fractol
 {
+	int		set_t;
 	t_win	win;
 	t_var	var;
 	t_mouse	mouse;
@@ -111,4 +117,6 @@ void	init(t_fractol *f, int check);
 void	render(t_fractol *f, int x, int y);
 /* check_arg.c */
 int		check_arc(int argc, char *argv);
+//prueba
+int	julia_move(int x, int y, t_fractol *f);
 #endif

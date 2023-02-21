@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/20 15:51:12 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:25:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ void	init_var(t_fractol *f)
 	f->var.min_im = 0;
 	f->var.max_im = 0;
 	f->var.set = -1;
+	f->var.x = 0;
+	f->var.y = 0;
 	f->mouse.posre = 0;
 	f->mouse.posim = 0;
 	f->mouse.zoom = 0;
+	f->mouse.status = 0;
+	f->mouse.x = 0;
+	f->mouse.y = 0;
 }
 
 void	get_num_complex(t_fractol *f)
