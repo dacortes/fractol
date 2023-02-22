@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 17:57:18 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:14:01 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ void	set_pos(double posre, double posim, int *set, t_fractol *f)
 		*set = 1;
 	}	
 }
+
 int	julia_click(int x, int y, t_fractol *f)
 {
 	if (f->mouse.status == TRUE)
 	{
-		f->mouse.posre = f->var.min_re + (double)x * (f->var.max_re - f->var.min_re)
-			/ WIDTH;
-		f->mouse.posim = f->var.max_im + (double)y * (f->var.min_im - f->var.max_im)
-			/ WIDTH;
+		f->mouse.posre = f->var.min_re + (double)x
+			* (f->var.max_re - f->var.min_re) / WIDTH;
+		f->mouse.posim = f->var.max_im + (double)y
+			* (f->var.min_im - f->var.max_im) / WIDTH;
 		f->set_t = 0;
 		f->var.x = f->mouse.posre;
 		f->var.y = f->mouse.posim;

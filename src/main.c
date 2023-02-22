@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/21 16:06:45 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:12:20 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	julia_move(int x, int y, t_fractol *f)
 {
-    f->mouse.x = x;
-    f->mouse.y = y;
+	f->mouse.x = x;
+	f->mouse.y = y;
 	julia_click(f->mouse.x, f->mouse.y, f);
 	return (0);
 }
+
 static void	get_set(t_fractol *f, int check)
 {
 	if (check == 1)
@@ -32,15 +33,12 @@ static void	get_set(t_fractol *f, int check)
 		f->var.set = JULIA;
 	}
 }
-#include <stdio.h>
+
 int	main(int ac, char **av)
 {
 	t_fractol	f;
 	int			check;
-	int		*prueba;
 
-	prueba = NULL;
-	f.set_t = 0;
 	check = check_arc(ac, av[1]);
 	if (check == ERROR)
 		exit(E_EXIT);
@@ -51,7 +49,6 @@ int	main(int ac, char **av)
 	mlx_hook(f.win.win, BTN_X, 0, end_fractol, &f);
 	mlx_key_hook(f.win.win, key_event, &f);
 	mlx_mouse_hook(f.win.win, mouse_event, &f);
-	*prueba = mlx_loop(f.win.mlx);
-	printf("%p", prueba);
+	mlx_loop(f.win.mlx);
 	return (SUCCES);
 }

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/21 16:56:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:03:34 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct s_fractol
 /* mandelbrot.c */
 int		mandelbrot(double cr, double ci);
 /* julia.c */
+int		julia_move(int x, int y, t_fractol *f);
 int		julia_click(int x, int y, t_fractol *f);
 int		julia(t_fractol *f, double zr, double zi);
 /* colors.c */
@@ -117,6 +118,6 @@ void	init(t_fractol *f, int check);
 void	render(t_fractol *f, int x, int y);
 /* check_arg.c */
 int		check_arc(int argc, char *argv);
-//prueba
-int	julia_move(int x, int y, t_fractol *f);
+/* status_btn.c */
+int		status_btn(int *status);
 #endif

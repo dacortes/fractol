@@ -6,20 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 17:23:26 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:13:14 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
-
-int	status_btn(int *status)
-{
-	(*status)++;
-	if (*status >= 2)
-		*status = 0;
-	ft_printf(G"Mouse button %d pressed\n"E, *status);
-	return (*status);
-}
 
 static void	zoom(t_fractol *f, double zoom)
 {
@@ -63,6 +54,20 @@ static void	move(t_fractol *f, double distance, char direction)
 	}
 }
 
+static int	key_event_extend(int keycode, t_fractol *f)
+{
+	if (keycode == KEY_F)
+	{
+		status_btn(&f->mouse.status);
+		if (f->var.set == JULIA)
+			mlx_hook(f->win.win, 6, 1L << 6, julia_move, f);
+	}
+	else
+		return (TRUE);
+	render(f, -1, -1);
+	return (FALSE);
+}
+
 int	key_event(int keycode, t_fractol *f)
 {
 	if (keycode == KEY_ESC)
@@ -82,12 +87,8 @@ int	key_event(int keycode, t_fractol *f)
 		move(f, 0.2, 'L');
 	else if (keycode == KEY_RIGHT)
 		move (f, 0.2, 'R');
-	else if (keycode == KEY_F)
-	{
-		status_btn(&f->mouse.status);
-		if (f->var.set == JULIA)
-			mlx_hook(f->win.win, 6, 1L << 6, julia_move, f);
-	}
+	else if (!key_event_extend(keycode, f))
+		return (TRUE);
 	else
 		return (TRUE);
 	render(f, -1, -1);
