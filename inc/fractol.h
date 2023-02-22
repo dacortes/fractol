@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/21 16:06:16 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:56:13 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@
 /* Mouse */
 typedef struct s_mouse
 {
-	float	posre;
-	float	posim;
+	double	posre;
+	double	posim;
 	double	zoom;
 	int		status;
 	int		x;
@@ -80,9 +80,9 @@ typedef struct s_var
 	double	sx;
 	double	rx;
 	double	fx;
+	double	x;
+	double	y;
 	int		set;
-	int		x;
-	int		y;
 }	t_var;
 
 /* Fractol */

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/21 16:11:40 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:23:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	key_event(int keycode, t_fractol *f)
 		move(f, 0.2, 'L');
 	else if (keycode == KEY_RIGHT)
 		move (f, 0.2, 'R');
-	else if (keycode == 3)
+	else if (keycode == KEY_F)
 	{
 		status_btn(&f->mouse.status);
 		if (f->var.set == JULIA)
