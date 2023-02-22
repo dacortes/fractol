@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 17:59:05 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:35:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	init_var(t_fractol *f)
 {
+	f->iter_max = 50;
 	f->set_t = 0;
 	f->win.mlx = NULL;
 	f->win.win = NULL;

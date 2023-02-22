@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 18:03:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:56:29 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 /* Dimensions */
 # define WIDTH 1000
 # define HEIGHT 1000
-# define MAX_ITER 60
+# define MAX_ITER 400
 
 /* Outputs */
 # define SUCCES 0
@@ -88,6 +88,7 @@ typedef struct s_var
 /* Fractol */
 typedef struct s_fractol
 {
+	int		iter_max;
 	int		set_t;
 	t_win	win;
 	t_var	var;
@@ -120,4 +121,5 @@ void	render(t_fractol *f, int x, int y);
 int		check_arc(int argc, char *argv);
 /* status_btn.c */
 int		status_btn(int *status);
+int		increase_iter(int *status);
 #endif

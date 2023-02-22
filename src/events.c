@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 18:13:14 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:48:17 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static int	key_event_extend(int keycode, t_fractol *f)
 		if (f->var.set == JULIA)
 			mlx_hook(f->win.win, 6, 1L << 6, julia_move, f);
 	}
+	else if (keycode == KEY_I)
+		ft_printf(B"iter button status : %d \n"Y, increase_iter(&f->iter_max));
 	else
 		return (TRUE);
 	render(f, -1, -1);

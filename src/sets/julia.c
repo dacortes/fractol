@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 18:14:01 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:35:52 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	julia(t_fractol *f, double zx, double zy)
 	int		i;
 
 	i = 0;
-	while (zx * zx + zy * zy <= 4.0 && ++i < MAX_ITER)
+	while (zx * zx + zy * zy <= 4.0 && ++i < f->iter_max)
 	{
 		tmp = 2 * zx * zy + f->mouse.posim;
 		zx = zx * zx - zy * zy + f->mouse.posre;
