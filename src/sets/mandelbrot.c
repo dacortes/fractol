@@ -6,13 +6,13 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:05:01 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 19:36:50 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:24:25 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
 
-int	mandelbrot(double cr, double ci)
+int	mandelbrot(double cr, double ci, t_fractol *f)
 {
 	double	zx;
 	double	zy;
@@ -22,7 +22,7 @@ int	mandelbrot(double cr, double ci)
 	zx = 0;
 	zy = 0;
 	i = -1;
-	while (zx * zx + zy * zy <= 4.0 && ++i < MAX_ITER)
+	while (zx * zx + zy * zy <= 4.0 && ++i < f->iter_max)
 	{
 		tmp = zx * zx - zy * zy + cr;
 		zy = 2 * zx * zy + ci;

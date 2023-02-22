@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:15:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:23:52 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ typedef struct s_fractol
 
 // ================================= FUNCTIONS ============================== //
 /* mandelbrot.c */
-int		mandelbrot(double cr, double ci);
+int		mandelbrot(double cr, double ci, t_fractol *f);
 /* julia.c */
 int		julia_move(int x, int y, t_fractol *f);
 int		julia_click(int x, int y, t_fractol *f);
