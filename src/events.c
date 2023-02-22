@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:05:45 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:07:17 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int	key_event_extend(int keycode, t_fractol *f)
 	}
 	else if (keycode == KEY_I)
 		ft_printf(B"iter button status: %d \n"Y, increase_iter(&f->iter_max));
-	else if (keycode  == KEY_R)
+	else if (keycode == KEY_R)
 	{
 		f->iter_max = 50;
 		f->var.x = 0;

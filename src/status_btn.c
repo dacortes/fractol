@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:02:07 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 19:58:02 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:07:36 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	status_btn(int *status)
 	return (*status);
 }
 
-int increase_iter(int *status)
+int	increase_iter(int *status)
 {
 	if (*status <= MAX_ITER)
 		*status += 5;
 	else
 		*status = 50;
-	return(*status);
+	return (*status);
 	ft_printf(B"iter button status : %d \n"Y, *status);
 }
