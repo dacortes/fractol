@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:00:23 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:09:19 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ typedef struct s_fractol
 
 // ================================= FUNCTIONS ============================== //
 /* sets/Burning_ship.c*/
-int		Burning_ship(t_fractol *f, double cr, double ci);
+int		burning_ship(t_fractol *f, double cr, double ci);
 /* sets/julia.c */
 int		julia_move(int x, int y, t_fractol *f);
 int		julia_click(int x, int y, t_fractol *f);

@@ -6,13 +6,13 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:48:51 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 10:59:49 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:09:16 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
 
-int	Burning_ship(t_fractol *f, double cr, double ci)
+int	burning_ship(t_fractol *f, double cr, double ci)
 {
 	double	zx;
 	double	zy;

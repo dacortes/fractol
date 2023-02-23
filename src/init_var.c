@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:02:46 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:39:01 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	get_num_complex(t_fractol *f)
 		f->var.max_im = f->var.min_im + (f->var.max_re - f->var.min_re)
 			* HEIGHT / WIDTH;
 	}
-	else if (f->var.set == MANDELBROT)
+	else
 	{
 		f->var.min_re = -2.0;
 		f->var.max_re = 1.0;
