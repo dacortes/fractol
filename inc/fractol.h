@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:23:52 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:00:23 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 /* Fractal sets */
 # define MANDELBROT 1
 # define JULIA 2
+# define BURNING_SHIP 3
 
 // ================================= COLORS ================================= //
 
@@ -96,12 +97,14 @@ typedef struct s_fractol
 }	t_fractol;
 
 // ================================= FUNCTIONS ============================== //
-/* mandelbrot.c */
-int		mandelbrot(double cr, double ci, t_fractol *f);
-/* julia.c */
+/* sets/Burning_ship.c*/
+int		Burning_ship(t_fractol *f, double cr, double ci);
+/* sets/julia.c */
 int		julia_move(int x, int y, t_fractol *f);
 int		julia_click(int x, int y, t_fractol *f);
 int		julia(t_fractol *f, double zr, double zi);
+/* sets/mandelbrot.c */
+int		mandelbrot(double cr, double ci, t_fractol *f);
 /* colors.c */
 void	ft_put_pixel(t_fractol *f, int x, int y, int iter);
 /* events.c */

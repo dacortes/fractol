@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 19:35:28 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:02:46 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ static char	*name_win(int check)
 		name = "Mandelbrot";
 	else if (check == 2)
 		name = "Julia";
+	else if (check == 3)
+		name = "Burning ship";
 	return (name);
 }
 

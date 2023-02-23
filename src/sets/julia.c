@@ -6,11 +6,19 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 19:35:52 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:05:37 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
+
+int	julia_move(int x, int y, t_fractol *f)
+{
+	f->mouse.x = x;
+	f->mouse.y = y;
+	julia_click(f->mouse.x, f->mouse.y, f);
+	return (0);
+}
 
 void	set_pos(double posre, double posim, int *set, t_fractol *f)
 {

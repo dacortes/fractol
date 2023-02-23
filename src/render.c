@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:05:16 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:24:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:00:21 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	calculete(t_fractol *f, double re, double im)
 		iter = mandelbrot(re, im, f);
 	else if (f->var.set == JULIA)
 		iter = julia(f, re, im);
+	else if (f->var.set == BURNING_SHIP)
+		iter = Burning_ship(f, re, im);
 	return (iter);
 }
 

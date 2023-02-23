@@ -6,19 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 18:12:20 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:05:53 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
-
-int	julia_move(int x, int y, t_fractol *f)
-{
-	f->mouse.x = x;
-	f->mouse.y = y;
-	julia_click(f->mouse.x, f->mouse.y, f);
-	return (0);
-}
 
 static void	get_set(t_fractol *f, int check)
 {
@@ -31,6 +23,11 @@ static void	get_set(t_fractol *f, int check)
 	{
 		ft_printf(G"Julia fractal generated correctly👍\n"E);
 		f->var.set = JULIA;
+	}
+	else if (check == 3)
+	{
+		ft_printf(G"Burning ship fractal generated correctly👍\n"E);
+		f->var.set = BURNING_SHIP;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/22 20:15:41 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/23 10:53:14 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Wall -Wextra -Werror
 
 SRC = check_arg.c colors.c events.c exit.c init_var.c main.c render.c reset_var.c\
 	status_btn.c\
-	sets/mandelbrot.c sets/julia.c
+	sets/mandelbrot.c sets/julia.c sets/Burning_ship.c
 LIBFT = ./libft/
 MINIL = ./miniLibX/
 L_SRC = ./src
