@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:20:43 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:23:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:40:55 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	check_arc(int argc, char *argv)
 	else
 	{
 		tmp = conv_low(tmp, argv);
-		ft_printf(R"%s"E, tmp);
 		f = check_arg(tmp);
 		if (f == FALSE)
 			return (ERROR);

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:20:48 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:47:04 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,11 @@ static int	key_event_extend(int keycode, t_fractol *f)
 		ft_printf(B"iter button status: %d \n"Y, increase_iter(&f->iter_max));
 	else if (keycode == KEY_R)
 		reset_var(f);
+	else if (keycode == KEY_M)
+		status_btn(&f->menu.status);
 	else
 		return (TRUE);
-	render(f, -1, -1);
+	status_menu_render(f);
 	return (FALSE);
 }
 
@@ -95,7 +97,7 @@ int	key_event(int keycode, t_fractol *f)
 		return (TRUE);
 	else
 		return (TRUE);
-	render(f, -1, -1);
+	status_menu_render(f);
 	return (FALSE);
 }
 
@@ -119,6 +121,6 @@ int	mouse_event(int keycode, int x, int y, t_fractol *f)
 		zoom(f, 2.0);
 	else
 		return (FALSE);
-	render(f, -1, -1);
+	status_menu_render(f);
 	return (FALSE);
 }

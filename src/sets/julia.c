@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:12:33 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:05:37 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:43:28 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	julia_click(int x, int y, t_fractol *f)
 		f->mouse.posim = f->var.y;
 		set_pos(f->mouse.posre, f->mouse.posim, &f->set_t, f);
 	}
-	render(f, -1, -1);
+	status_menu_render(f);
 	return (SUCCES);
 }
 

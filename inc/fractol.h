@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:09:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:40:45 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@
 # define Y "\033[1;33m"    //yellow
 # define B "\033[1;34m"    //blue
 // ================================= STRUCTURES ============================= //
+
+/* Menu */
+typedef struct s_menu
+{
+	int	status;
+}	t_menu;
 
 /* Mouse */
 typedef struct s_mouse
@@ -93,10 +99,14 @@ typedef struct s_fractol
 	int		set_t;
 	t_win	win;
 	t_var	var;
+	t_menu	menu;
 	t_mouse	mouse;
 }	t_fractol;
 
 // ================================= FUNCTIONS ============================== //
+/* menu/render_mn.c */
+void	rendder_mn(t_fractol *f);
+void	status_menu_render(t_fractol *f);
 /* sets/Burning_ship.c*/
 int		burning_ship(t_fractol *f, double cr, double ci);
 /* sets/julia.c */
@@ -106,6 +116,8 @@ int		julia(t_fractol *f, double zr, double zi);
 /* sets/mandelbrot.c */
 int		mandelbrot(double cr, double ci, t_fractol *f);
 /* colors.c */
+int		create_trgb(int t, int r, int g, int b);
+void	my_mlx_pixel_put(t_win *data, int x, int y, int color);
 void	ft_put_pixel(t_fractol *f, int x, int y, int iter);
 /* events.c */
 int		key_event(int keycode, t_fractol *f);

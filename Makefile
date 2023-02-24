@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/23 10:53:14 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/24 11:02:51 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ FLAGS = -Wall -Wextra -Werror
 
 SRC = check_arg.c colors.c events.c exit.c init_var.c main.c render.c reset_var.c\
 	status_btn.c\
+	menu/render_mn.c\
 	sets/mandelbrot.c sets/julia.c sets/Burning_ship.c
 LIBFT = ./libft/
 MINIL = ./miniLibX/
@@ -61,6 +62,7 @@ dir:
 	@make -C $(MINIL)
 	@mkdir -p $(D_OBJ)
 	@mkdir -p $(D_OBJ)/sets
+	@mkdir -p $(D_OBJ)/menu
 $(D_OBJ)/%.o:$(L_SRC)/%.c
 	@printf "$(ligth)$(Y)\r$@...$(E)"
 	@$(CC) -MMD $(FLAGS) -c $< -o $@ $(INC)

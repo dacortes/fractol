@@ -6,11 +6,16 @@
 /*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:21:47 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:22:58 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:54:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
+
+int	create_trgb(int t, int r, int g, int b)
+{
+	return (t << 24 | r << 16 | g << 8 | b);
+}
 
 static int	generete_c(int iter)
 {
