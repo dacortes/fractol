@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 11:40:45 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 18:39:34 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 /* Dimensions */
 # define WIDTH 1000
-# define HEIGHT 1000
+# define HEIGHT 800
 # define MAX_ITER 400
 
 /* Outputs */
@@ -52,6 +52,8 @@
 typedef struct s_menu
 {
 	int	status;
+	int	txt_x;
+	int txt_y;
 }	t_menu;
 
 /* Mouse */
@@ -105,8 +107,11 @@ typedef struct s_fractol
 
 // ================================= FUNCTIONS ============================== //
 /* menu/render_mn.c */
+int		percentage(int x, int por, int param);
 void	rendder_mn(t_fractol *f);
 void	status_menu_render(t_fractol *f);
+/* menu/rtxt_sets.c */
+void	txt(int x, int y, t_fractol *f);
 /* sets/Burning_ship.c*/
 int		burning_ship(t_fractol *f, double cr, double ci);
 /* sets/julia.c */

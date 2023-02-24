@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
+#    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/02/24 11:02:51 by dacortes         ###   ########.fr        #
+#    Updated: 2023/02/24 18:38:37 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Wall -Wextra -Werror
 
 SRC = check_arg.c colors.c events.c exit.c init_var.c main.c render.c reset_var.c\
 	status_btn.c\
-	menu/render_mn.c\
+	menu/render_mn.c menu/txt_sets.c\
 	sets/mandelbrot.c sets/julia.c sets/Burning_ship.c
 LIBFT = ./libft/
 MINIL = ./miniLibX/

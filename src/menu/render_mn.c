@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   render_mn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 10:45:05 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 11:41:42 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 18:43:09 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
 
-static int percentage(int x)
+int percentage(int x, int por, int param)
 {
-	x = 70 * WIDTH / 100;
+	x = por * param / 100;
 	return (x);
 }
 
@@ -27,11 +27,12 @@ void	rendder_mn(t_fractol *f)
 	x = 0;
     while (++y < HEIGHT)
     {
-		x = percentage(x);
+		x = percentage(x, 70, WIDTH);
 		while (++x < WIDTH)
 		my_mlx_pixel_put(&f->win, x, y, create_trgb(100, 255, 255, 255));
 	}
 	mlx_put_image_to_window(f->win.mlx, f->win.win, f->win.img, 0, 0);
+	txt(82, 5, f);
 }
 
 void	status_menu_render(t_fractol *f)
