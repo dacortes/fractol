@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 18:39:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:28:25 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 /* Dimensions */
 # define WIDTH 1000
-# define HEIGHT 800
+# define HEIGHT	800
 # define MAX_ITER 400
 
 /* Outputs */

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 10:45:05 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 18:43:09 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:31:38 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	rendder_mn(t_fractol *f)
 
 	y = -1;
 	x = 0;
+	f->menu.txt_x = 0;
+	f->menu.txt_y = 0;
     while (++y < HEIGHT)
     {
 		x = percentage(x, 70, WIDTH);
