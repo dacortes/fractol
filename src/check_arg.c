@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:20:43 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/23 11:40:55 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:01:19 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
+
+static int clear_free(char *ptr)
+{
+
+	free(ptr);
+	ptr = NULL;
+	return (ERROR);
+}
 
 static char	*conv_low(char *tmp, char *agv)
 {
@@ -32,7 +40,7 @@ static char	*conv_low(char *tmp, char *agv)
 static void	error_agv(void)
 {
 	ft_printf(B"Error-->Usage: ./fractol [fractal]\n"E);
-	ft_printf(B"Fractals :\n1.Mandelbrot\n2.Julia\n3.Burning ship"E);
+	ft_printf(B"Fractals :\n1.Mandelbrot\n2.Julia\n3.Burning ship\n"E);
 }
 
 static int	check_arg(char *tmp)
@@ -62,24 +70,24 @@ int	check_arc(int argc, char *argv)
 	char	*tmp;
 	int		f;
 
-	tmp = ft_calloc(1, 1);
+	tmp = NULL;
 	f = 0;
-	if (!tmp)
-		return (ERROR);
 	if (argc != 2)
 	{
 		ft_printf(R"Error-->Wrong number of arguments\n"E);
 		error_agv();
+		free(tmp);
 		return (ERROR);
 	}
 	else
 	{
 		tmp = conv_low(tmp, argv);
+		if (!tmp)
+			return(clear_free(tmp));
 		f = check_arg(tmp);
 		if (f == FALSE)
-			return (ERROR);
-	}
-	if (tmp)
+			return(clear_free(tmp));
 		free(tmp);
+	}
 	return (f);
 }
