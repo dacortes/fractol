@@ -6,15 +6,14 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:20:43 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 11:01:19 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:13:16 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
 
-static int clear_free(char *ptr)
+static int	clear_free(char *ptr)
 {
-
 	free(ptr);
 	ptr = NULL;
 	return (ERROR);
@@ -83,10 +82,10 @@ int	check_arc(int argc, char *argv)
 	{
 		tmp = conv_low(tmp, argv);
 		if (!tmp)
-			return(clear_free(tmp));
+			return (clear_free(tmp));
 		f = check_arg(tmp);
 		if (f == FALSE)
-			return(clear_free(tmp));
+			return (clear_free(tmp));
 		free(tmp);
 	}
 	return (f);
