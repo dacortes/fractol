@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 17:42:07 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:04:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@
 # define BURNING_SHIP 3
 
 /* themes */
-#define BLUE 1
-#define GREEN 2
-#define RED 3
+# define BLUE 1
+# define GREEN 2
+# define RED 3
 
 // ================================= COLORS ================================= //
 
