@@ -6,11 +6,24 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:27:59 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 12:39:34 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:01:08 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
+
+static void	logo(int x, int y, t_fractol *f)
+{
+	put_str(f, "/* ******************************* */", x - 10, y + 75);
+	put_str(f, "/*           :::      ::::::::     */", x - 10, y + 77);
+	put_str(f, "/*         :+:      :+:    :+:     */", x - 10, y + 79);
+	put_str(f, "/*       +:+ +:+         +:+       */", x - 10, y + 81);
+	put_str(f, "/*      +#+  +:+       +#+         */", x - 10, y + 83);
+	put_str(f, "/*     +#+#+#+#+#+    +#+          */", x - 10, y + 85);
+	put_str(f, "/*           #+#    #+#            */", x - 10, y + 87);
+	put_str(f, "/*          ###   ########.fr      */", x - 10, y + 89);
+	put_str(f, "/* ******************************* */", x - 10, y + 91);
+}
 
 void	txt_mandelbrot(int x, int y, t_fractol *f)
 {
@@ -45,7 +58,7 @@ void	txt_butning_ship(int x, int y, t_fractol *f)
 	put_str(f, "the sea.", x - 10, y + 13);
 }
 
-void txt_defaul(int x, int y, t_fractol *f)
+void	txt_defaul(int x, int y, t_fractol *f)
 {
 	put_str(f, "CONTROLS:", x - 10, y + 25);
 	put_str(f, "Keyboard:", x - 10, y + 28);
@@ -64,4 +77,5 @@ void txt_defaul(int x, int y, t_fractol *f)
 	put_str(f, "Depends on mouse settings.", x - 10, y + 57);
 	put_str(f, "scroll up -> zoom out/in", x - 10, y + 59);
 	put_str(f, "scroll down -> zoom in/out", x - 10, y + 61);
+	logo(x, y, f);
 }
