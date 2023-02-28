@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_var.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 11:30:59 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:44:51 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_var(t_fractol *f)
 	f->var.x = 0;
 	f->var.y = 0;
 	f->menu.status = 0;
+	f->menu.key_t = 1;
 	f->mouse.posre = 0;
 	f->mouse.posim = 0;
 	f->mouse.zoom = 0;

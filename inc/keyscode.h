@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keyscode.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 08:41:50 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 11:27:11 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:10:00 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define KEY_R 15
 # define KEY_I 34
 # define KEY_M 46
+# define KEY_T 17
 # define BTN_X 17
 # define KEY_ESC 53
 # define KEY_LEFT 123

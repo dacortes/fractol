@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 12:43:31 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:42:07 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@
 # define JULIA 2
 # define BURNING_SHIP 3
 
+/* themes */
+#define BLUE 1
+#define GREEN 2
+#define RED 3
+
 // ================================= COLORS ================================= //
 
 # define E "\033[m"        //end
@@ -47,13 +52,21 @@
 # define Y "\033[1;33m"    //yellow
 # define B "\033[1;34m"    //blue
 // ================================= STRUCTURES ============================= //
+/* Coplor */
+typedef struct s_color
+{
+	double	r;
+	double	g;
+	double	b;
+}	t_color;
 
 /* Menu */
 typedef struct s_menu
 {
 	int	status;
+	int	key_t;
 	int	txt_x;
-	int txt_y;
+	int	txt_y;
 }	t_menu;
 
 /* Mouse */
@@ -150,4 +163,5 @@ void	reset_var(t_fractol *f);
 /* status_btn.c */
 int		status_btn(int *status);
 int		increase_iter(int *status);
+int		iter_one_by_one(int *status);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   status_btn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:02:07 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/22 20:07:36 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:48:15 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,13 @@ int	increase_iter(int *status)
 		*status = 50;
 	return (*status);
 	ft_printf(B"iter button status : %d \n"Y, *status);
+}
+
+int	iter_one_by_one(int *status)
+{
+	(*status)++;
+	if (*status >= 4)
+		*status = 1;
+	ft_printf(Y"iter one by one : %d \n"E, *status);
+	return (*status);
 }

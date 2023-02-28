@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/24 11:47:04 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:09:44 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ static int	key_event_extend(int keycode, t_fractol *f)
 		reset_var(f);
 	else if (keycode == KEY_M)
 		status_btn(&f->menu.status);
+	else if (keycode == KEY_T)
+		iter_one_by_one(&f->menu.key_t);
 	else
 		return (TRUE);
 	status_menu_render(f);
