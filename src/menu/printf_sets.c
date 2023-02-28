@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:26:32 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 11:41:30 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:49:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	txt(int x, int y, t_fractol *f)
 		txt_julia(x, y, f);
 	else if (f->var.set == BURNING_SHIP)
 		txt_butning_ship(x, y, f);
+	txt_defaul(x, y, f);
 }

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:27:59 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 11:44:48 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:39:34 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,53 @@
 void	txt_mandelbrot(int x, int y, t_fractol *f)
 {
 	put_str(f, "MANDELBROT", x, y);
-	put_str(f, "En matemáticas, un conjunto multibrot", x - 10, y + 5);
-	put_str(f, "es el conjunto de valores en el plano", x - 10, y + 7);
-	put_str(f, "complejo cuyo valor absoluto", x - 10, y + 9);
-	put_str(f, "permanece por debajo de algun valor", x - 10, y + 11);
-	put_str(f, "finito en las iteraciones de un", x - 10, y + 13);
-	put_str(f, "miembro de la familia general de los", x - 10, y + 15);
-	put_str(f, "polinomios monicos de una variable", x - 10, y + 17);
-	put_str(f, "recursivos.", x - 10, y + 19);
+	put_str(f, "In mathematics, a multibrot set is the", x - 10, y + 5);
+	put_str(f, "set of complex plane values for which", x - 10, y + 7);
+	put_str(f, "the absolute value remains below a", x - 10, y + 9);
+	put_str(f, "certain finite value in the iterations", x - 10, y + 11);
+	put_str(f, "of a member of the general family of", x - 10, y + 13);
+	put_str(f, "recursively defined monic polynomials", x - 10, y + 15);
+	put_str(f, "of one variable.", x - 10, y + 17);
 }
 
 void	txt_julia(int x, int y, t_fractol *f)
 {
 	put_str(f, "JULIA", x, y);
-	put_str(f, "Los conjuntos de Julia, asi llamados", x - 10, y + 5);
-	put_str(f, "por el matematico Gaston Julia son", x - 10, y + 7);
-	put_str(f, "una familia de conjuntos fractales", x - 10, y + 9);
-	put_str(f, "que se obtienen al estudiar el", x - 10, y + 11);
-	put_str(f, "comportamiento de los numeros", x - 10, y + 13);
-	put_str(f, "complejos al ser iterados por una", x - 10, y + 15);
-	put_str(f, "funcion holomorfa.", x - 10, y + 17);
+	put_str(f, "Julia sets, named after the", x - 10, y + 5);
+	put_str(f, "mathematician Gaston Julia, are", x - 10, y + 7);
+	put_str(f, "a family fractal sets obtained", x - 10, y + 9);
+	put_str(f, "by studying the behavior of complex", x - 10, y + 11);
+	put_str(f, "numbers when iterated by a holomorphic ", x - 10, y + 13);
+	put_str(f, "function.", x - 10, y + 15);
 }
 
 void	txt_butning_ship(int x, int y, t_fractol *f)
 {
 	put_str(f, "BURNING SHIP", x, y);
-	put_str(f, "El fractal de Burning Ship es una", x - 10, y + 5);
-	put_str(f, "variante del conjunto de Mandelbrot,", x - 10, y + 7);
-	put_str(f, "que se caracteriza por tener una", x - 10, y + 9);
-	put_str(f, "forma cuadrada  y simétrica similar a", x - 10, y + 11);
-	put_str(f, "un barco  en llamas navegando en el", x - 10, y + 13);
-	put_str(f, "mar.", x - 10, y + 15);
+	put_str(f, "The Burning Ship fractal is a variant", x - 10, y + 5);
+	put_str(f, "of the Mandelbrot set, characterized", x - 10, y + 7);
+	put_str(f, "by a square and symmetric shape that", x - 10, y + 9);
+	put_str(f, "resembles a burning ship sailing on", x - 10, y + 11);
+	put_str(f, "the sea.", x - 10, y + 13);
 }
 
 void txt_defaul(int x, int y, t_fractol *f)
 {
-	
+	put_str(f, "CONTROLS:", x - 10, y + 25);
+	put_str(f, "Keyboard:", x - 10, y + 28);
+	put_str(f, "i -> controls the number of iterations", x - 10, y + 30);
+	put_str(f, "r -> restarts the fractal", x - 10, y + 32);
+	put_str(f, "f -> only works for julia and saves", x - 10, y + 34);
+	put_str(f, "the state of the fractal.", x - 10, y + 36);
+	put_str(f, "m -> hides and shows the menu", x - 10, y + 38);
+	put_str(f, "t -> changes the theme.", x - 10, y + 40);
+	put_str(f, "move:", x - 10, y + 42);
+	put_str(f, "->up arrow", x - 10, y + 44);
+	put_str(f, "->left arrow", x - 10, y + 46);
+	put_str(f, "->rigth arrow", x - 10, y + 48);
+	put_str(f, "->down arrow", x - 10, y + 50);
+	put_str(f, "Mouse:", x - 10, y + 55);
+	put_str(f, "Depends on mouse settings.", x - 10, y + 57);
+	put_str(f, "scroll up -> zoom out/in", x - 10, y + 59);
+	put_str(f, "scroll down -> zoom in/out", x - 10, y + 61);
 }

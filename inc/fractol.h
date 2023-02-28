@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 11:34:51 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:49:12 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	status_menu_render(t_fractol *f);
 void	txt_mandelbrot(int x, int y, t_fractol *f);
 void	txt_julia(int x, int y, t_fractol *f);
 void	txt_butning_ship(int x, int y, t_fractol *f);
+void	txt_defaul(int x, int y, t_fractol *f);
 /* menu/rtxt_sets.c */
 void	put_str(t_fractol *f, char *str, int porx, int pory);
 void	txt(int x, int y, t_fractol *f);
