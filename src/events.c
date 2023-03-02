@@ -6,23 +6,25 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 18:26:45 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 17:09:44 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/02 22:48:02 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../inc/fractol.h"
 
-static void	zoom(t_fractol *f, double zoom)
+static void	zoom(t_fractol *f, double zoom, int x, int y)
 {
 	double	cen_re;
 	double	cen_im;
-
+	(void)x;
+	(void)y;
 	cen_re = f->var.min_re - f->var.max_re;
 	cen_im = f->var.max_im - f->var.min_im;
 	f->var.max_re = f->var.max_re + (cen_re - zoom * cen_re) / 2;
 	f->var.min_re = f->var.max_re + zoom * cen_re;
 	f->var.min_im = f->var.min_im + (cen_im - zoom * cen_im) / 2;
 	f->var.max_im = f->var.min_im + zoom * cen_im;
+
 }
 
 static void	move(t_fractol *f, double distance, char direction)
@@ -59,7 +61,7 @@ static int	key_event_extend(int keycode, t_fractol *f)
 	if (keycode == KEY_F)
 	{
 		status_btn(&f->mouse.status);
-		if (f->var.set == JULIA)
+		if (f->var.set == JULIA || f->var.set == UNION)
 			mlx_hook(f->win.win, 6, 1L << 6, julia_move, f);
 	}
 	else if (keycode == KEY_I)
@@ -83,10 +85,6 @@ int	key_event(int keycode, t_fractol *f)
 		end_fractol(f);
 		return (SUCCES);
 	}
-	else if (keycode == KEY_PLUS)
-		zoom(f, 0.2);
-	else if (keycode == KEY_MINUS)
-		zoom(f, 2);
 	else if (keycode == KEY_UP)
 		move(f, 0.2, 'U');
 	else if (keycode == KEY_LEFT)
@@ -107,7 +105,7 @@ int	mouse_event(int keycode, int x, int y, t_fractol *f)
 {
 	if (keycode == SCROLL_UP)
 	{
-		zoom(f, 0.8);
+		zoom(f, 1.2, f->mouse.x, f->mouse.y);
 		x -= WIDTH / 2;
 		y -= HEIGHT / 2;
 		if (x < 0)
@@ -120,7 +118,7 @@ int	mouse_event(int keycode, int x, int y, t_fractol *f)
 			move(f, (double)y / HEIGHT, 'D');
 	}
 	else if (keycode == SCROLL_DOW)
-		zoom(f, 2.0);
+		zoom(f, 0.8, f->mouse.x, f->mouse.y);
 	else
 		return (FALSE);
 	status_menu_render(f);

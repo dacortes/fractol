@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:12:38 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 18:05:38 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/02 22:35:10 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define MANDELBROT 1
 # define JULIA 2
 # define BURNING_SHIP 3
+# define UNION 4
 
 /* themes */
 # define BLUE 1
@@ -107,6 +108,7 @@ typedef struct s_var
 	double	x;
 	double	y;
 	int		set;
+	int		uni;
 }	t_var;
 
 /* Fractol */
@@ -158,6 +160,7 @@ void	get_num_complex(t_fractol *f);
 void	init(t_fractol *f, int check);
 /* render.c */
 void	render(t_fractol *f, int x, int y);
+void	render_union(t_fractol *f, int x, int y, int width);
 /* check_arg.c */
 int		check_arc(int argc, char *argv);
 /* reset_var.c */

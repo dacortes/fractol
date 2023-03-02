@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:32:44 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 17:46:11 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:06:47 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 
 static void	get_set(t_fractol *f, int check)
 {
-	if (check == 1)
+	if (check == MANDELBROT)
 	{
 		ft_printf(G"Mandelbrot fractal generated correctly👍\n"E);
 			f->var.set = MANDELBROT;
 	}
-	else if (check == 2)
+	else if (check == JULIA)
 	{
 		ft_printf(G"Julia fractal generated correctly👍\n"E);
 		f->var.set = JULIA;
 	}
-	else if (check == 3)
+	else if (check == BURNING_SHIP)
 	{
 		ft_printf(G"Burning ship fractal generated correctly👍\n"E);
 		f->var.set = BURNING_SHIP;
+	}
+	else if (check == UNION)
+	{
+		ft_printf(G"mandelbrot and julia fractal generated correctly👍\n"E);
+		f->var.set = UNION;
 	}
 }
 

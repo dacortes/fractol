@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 08:41:50 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 17:10:00 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:38:38 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 # define KEY_RIGHT 124
 # define KEY_DOWN 125
 # define KEY_UP 126
-# define KEY_PLUS 61
-# define KEY_MINUS 45
 # define SCROLL_UP 4
 # define SCROLL_DOW 5
 # define MIDDLE_CLICK 3

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 17:44:51 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/02 22:42:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	init_var(t_fractol *f)
 	f->var.min_im = 0;
 	f->var.max_im = 0;
 	f->var.set = -1;
+	f->var.uni = 0;
 	f->var.x = 0;
 	f->var.y = 0;
 	f->menu.status = 0;
@@ -42,6 +43,7 @@ void	init_var(t_fractol *f)
 
 void	get_num_complex(t_fractol *f)
 {
+
 	if (f->var.set == JULIA)
 	{
 		f->var.min_re = -2.0;
@@ -74,12 +76,14 @@ static char	*name_win(int check)
 	char	*name;
 
 	name = NULL;
-	if (check == 1)
+	if (check == MANDELBROT)
 		name = "Mandelbrot";
-	else if (check == 2)
+	else if (check == JULIA)
 		name = "Julia";
-	else if (check == 3)
+	else if (check == BURNING_SHIP)
 		name = "Burning ship";
+	else if (check == UNION)
+		name = "Union";
 	return (name);
 }
 
