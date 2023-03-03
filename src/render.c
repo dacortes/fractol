@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 09:05:16 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/02 22:45:52 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/03 08:43:54 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	render_union(t_fractol *f, int x, int y, int width)
 		swap(&x, &tmp);
 		while (++x < width)
 		{
-			re = f->var.min_re + (double)x * (f->var.max_re - f->var.min_re)
+			re = f->var.min_re + (double)x  * (f->var.max_re - f->var.min_re)
 				/ width;
 			im = f->var.max_im + (double)y * (f->var.min_im - f->var.max_im)
 				/ HEIGHT;
