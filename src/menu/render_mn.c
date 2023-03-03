@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 10:45:05 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/03 08:36:30 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:43:27 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	status_menu_render(t_fractol *f)
 	{
 		f->var.uni = MANDELBROT;
 		render_union(f, -1, -1, percentage(0, 50, WIDTH));
-		f->var.uni  = JULIA;
-		render_union(f, percentage(50, 50, WIDTH), -1,  WIDTH);
+		f->var.uni = JULIA;
+		render_union(f, percentage(40, 40, WIDTH), -1, WIDTH);
 		rendder_mn(f);
 	}
 	else if (f->menu.status == TRUE && f->var.set == UNION)
@@ -57,7 +57,7 @@ void	status_menu_render(t_fractol *f)
 		f->var.uni = MANDELBROT;
 		render_union(f, -1, -1, percentage(0, 50, WIDTH));
 		f->var.uni = JULIA;
-		render_union(f, percentage(50, 50, WIDTH), -1,  WIDTH);
+		render_union(f, percentage(40, 40, WIDTH), -1, WIDTH);
 	}
 	else
 		render(f, -1, -1);

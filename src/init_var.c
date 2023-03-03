@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:34:10 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/03 08:53:52 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:37:25 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	init_var(t_fractol *f)
 
 void	get_num_complex(t_fractol *f)
 {
-
 	if (f->var.set == JULIA)
 	{
 		f->var.min_re = -2.0;
@@ -54,9 +53,9 @@ void	get_num_complex(t_fractol *f)
 	}
 	else if (f->var.set == UNION)
 	{
-		f->var.min_re = -4.2;
-		f->var.max_re = 1.7;
-		f->var.min_im = -2.0;
+		f->var.min_re = -3.5;
+		f->var.max_re = 1.5;
+		f->var.min_im = -2.2;
 		f->var.max_im = f->var.min_im + (f->var.max_re - f->var.min_re)
 			* HEIGHT / WIDTH;
 	}
