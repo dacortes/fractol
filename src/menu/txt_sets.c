@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:27:59 by dacortes          #+#    #+#             */
-/*   Updated: 2023/02/28 13:01:08 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:57:51 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ void	txt_butning_ship(int x, int y, t_fractol *f)
 	put_str(f, "by a square and symmetric shape that", x - 10, y + 9);
 	put_str(f, "resembles a burning ship sailing on", x - 10, y + 11);
 	put_str(f, "the sea.", x - 10, y + 13);
+}
+
+void	txt_union(int x, int y, t_fractol *f)
+{
+	put_str(f, "UNION MANDELBROT & JULIA", x - 5, y);
+	put_str(f, "I plotted both the Mandelbrot and", x - 10, y + 5);
+	put_str(f, "Julia fractals simultaneously, just", x - 10, y + 7);
+	put_str(f, "because I was motivated to do so.", x - 10, y + 9);
 }
 
 void	txt_defaul(int x, int y, t_fractol *f)
