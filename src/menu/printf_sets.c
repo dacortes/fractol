@@ -6,11 +6,19 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:26:32 by dacortes          #+#    #+#             */
-/*   Updated: 2023/03/03 13:50:17 by dacortes         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:59:59 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../inc/fractol.h"
+
+void	txt_union(int x, int y, t_fractol *f)
+{
+	put_str(f, "UNION MANDELBROT & JULIA", x - 5, y);
+	put_str(f, "I plotted both the Mandelbrot and", x - 10, y + 5);
+	put_str(f, "Julia fractals simultaneously, just", x - 10, y + 7);
+	put_str(f, "because I was motivated to do so.", x - 10, y + 9);
+}
 
 void	put_str(t_fractol *f, char *str, int porx, int pory)
 {
