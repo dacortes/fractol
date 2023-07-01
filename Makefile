@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/06/23 16:50:04 by dacortes         ###   ########.fr        #
+#    Updated: 2023/07/01 11:09:14 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,8 +63,8 @@ italic = \033[3m
 all: dir $(NAME)
 -include $(DEP)
 dir:
-	make -C $(LIBFT)
-	make -C $(MINIL)
+	make -C $(LIBFT) --no-print-directory
+	make -C $(MINIL) --no-print-directory
 	mkdir -p $(D_OBJ)
 	mkdir -p $(D_OBJ)/sets
 	mkdir -p $(D_OBJ)/menu
@@ -86,12 +86,12 @@ $(NAME): $(OBJ)
 .PHONY: all clean fclean re
 fclean: clean
 	$(RM) $(NAME)
-	make fclean -C $(LIBFT)
+	make fclean -C $(LIBFT) --no-print-directory
 	echo "✅ ==== $(P)$(ligth)fractol executable files and name cleaned!$(E) ==== ✅\n"
 clean:
 	$(RM) $(D_OBJ)
-	make clean -C $(LIBFT)
-	make clean -C $(MINIL)
+	make clean -C $(LIBFT) --no-print-directory
+	make clean -C $(MINIL) --no-print-directory
 	echo "✅ ==== $(P)$(ligth)fractol object files cleaned!$(E) ==== ✅"
 re: fclean all
 TOTAL_FILES := $(words $(SRC))
