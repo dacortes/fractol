@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dacortes <dacortes@student.42barcelona.    +#+  +:+       +#+         #
+#    By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:21:24 by dacortes          #+#    #+#              #
-#    Updated: 2023/07/01 11:09:14 by dacortes         ###   ########.fr        #
+#    Updated: 2023/08/04 16:32:51 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ all: dir $(NAME)
 -include $(DEP)
 dir:
 	make -C $(LIBFT) --no-print-directory
-	make -C $(MINIL) --no-print-directory
+	make -C $(MINIL) --no-print-directory &> /dev/null
 	mkdir -p $(D_OBJ)
 	mkdir -p $(D_OBJ)/sets
 	mkdir -p $(D_OBJ)/menu
